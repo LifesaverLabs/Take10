@@ -228,6 +228,10 @@ const Index = () => {
             ))}
           </div>
 
+          <p className="text-center text-sm text-muted-foreground mb-8 max-w-2xl mx-auto">
+            All video clips were AI generated
+          </p>
+
           <Card className="bg-accent/5 border-accent/20 mx-auto max-w-3xl">
             <CardContent className="pt-6">
               <div className="text-center">
