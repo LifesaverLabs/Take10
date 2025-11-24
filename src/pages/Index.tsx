@@ -29,7 +29,7 @@ const Index = () => {
     setCount(10);
   };
 
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://take10.us';
+  const shareUrl = 'https://www.take10.us';
   const shareTitle = 'Take 10 - A De-escalation Practice';
   const shareText = 'Take 10: A simple phrase that creates space for calm. Whether 10 seconds, 10 minutes, or 10 hours—choose your pause. Learn more about this powerful de-escalation tool.';
 
