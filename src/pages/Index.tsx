@@ -507,14 +507,27 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg"
-                className="h-12 px-6 bg-[var(--calm-gradient)] hover:scale-105 transition-transform opacity-100 text-primary-foreground"
+                className="h-12 px-6 bg-[var(--calm-gradient)] hover:scale-105 transition-transform opacity-100 text-primary-foreground shadow-lg"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 Learn More
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="h-12 px-6 hover:bg-primary/10 transition-colors opacity-100 border-primary text-primary"
+                className="h-12 px-6 hover:bg-primary/10 transition-colors opacity-100 border-primary text-primary shadow-md"
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: 'Take 10',
+                      text: 'Take 10 - A de-escalation phrase that creates space for calm. Whether 10 seconds, 10 minutes, or 10 hours.',
+                      url: window.location.href
+                    });
+                  } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('Link copied to clipboard!');
+                  }
+                }}
               >
                 Share This Resource
               </Button>
