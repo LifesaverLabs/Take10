@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, Heart, Brain, Users, BookOpen, Pause } from "lucide-react";
+import { Clock, Heart, Brain, Users, BookOpen, Pause, CheckCircle2, XCircle } from "lucide-react";
+import bookCover from "@/assets/unforgiving-places-cover.jpg";
 
 const Index = () => {
   const [count, setCount] = useState(10);
@@ -223,8 +224,144 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Research & Evidence */}
+      {/* Why Not "Calm Down"? */}
+      <section className="py-20 md:py-32 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+                Why Not Just Say <span className="text-gradient">"Calm Down"</span>?
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                "Take 10" is more effective than "Calm Down" for de-escalation
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <Card className="border-2 border-destructive/20 bg-card">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-3 mb-4">
+                    <XCircle className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
+                    <h3 className="text-xl font-semibold">"Calm Down" Often Fails</h3>
+                  </div>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex gap-2">
+                      <span className="text-destructive mt-1">•</span>
+                      <span>Feels dismissive and invalidating of emotions</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-destructive mt-1">•</span>
+                      <span>Implies the person is overreacting</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-destructive mt-1">•</span>
+                      <span>Offers no actionable next step</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-destructive mt-1">•</span>
+                      <span>Can actually escalate the situation further</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary/20 bg-card">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-3 mb-4">
+                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <h3 className="text-xl font-semibold">"Take 10" Works Better</h3>
+                  </div>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Provides a clear, concrete action</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Respects everyone's autonomy and choice</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Creates space without judgment</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Gets more work done by interrupting the spiral</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="bg-primary/5 border-primary/20">
+              <CardContent className="pt-6">
+                <p className="text-lg leading-relaxed text-center">
+                  <strong className="text-primary">"Take 10"</strong> doesn't tell anyone how to feel or what to do next. It simply creates a pause—a moment to step back and choose your response. That choice and respect make all the difference in de-escalation effectiveness.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Book Promotion */}
       <section className="py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center mb-12">
+              <BookOpen className="mx-auto mb-4 h-12 w-12 text-primary" />
+              <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+                Recommended Reading
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Deeper insights into violence interruption and prevention
+              </p>
+            </div>
+
+            <Card className="border-2 border-primary/20 bg-card shadow-[var(--hero-shadow)]">
+              <CardContent className="pt-8 pb-8">
+                <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                  <div className="flex-shrink-0">
+                    <img 
+                      src={bookCover} 
+                      alt="Unforgiving Places: The Unexpected Origins of Gun Violence book cover"
+                      className="w-48 h-auto shadow-xl rounded-lg"
+                    />
+                  </div>
+                  <div className="flex-1 space-y-4">
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2">
+                        Unforgiving Places: The Unexpected Origins of Gun Violence
+                      </h3>
+                      <p className="text-lg text-primary font-semibold">by Jens Ludwig</p>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      A groundbreaking examination of gun violence that goes beyond the usual debates about gun access. Ludwig explores how creating "forgiving places"—environments that interrupt conflict spirals and provide moments for de-escalation—can dramatically reduce violence. This research-backed approach aligns perfectly with the Take 10 philosophy of interrupting escalation patterns before they lead to harm.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      The book demonstrates that violence isn't just about guns; it's about the environments and social practices that either encourage or interrupt conflict escalation. Take 10 represents exactly the kind of cultural intervention Ludwig advocates for: simple, accessible tools that help communities become more "forgiving" by creating space for choice and de-escalation.
+                    </p>
+                    <div className="pt-4">
+                      <Button 
+                        size="lg"
+                        className="bg-[var(--calm-gradient)] hover:scale-105 transition-transform"
+                        asChild
+                      >
+                        <a href="https://press.uchicago.edu/ucp/books/book/chicago/U/bo244203115.html" target="_blank" rel="noopener noreferrer">
+                          Learn More About the Book
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Research & Evidence */}
+      <section className="py-20 md:py-32 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center mb-16">
             <BookOpen className="mx-auto mb-4 h-12 w-12 text-primary" />
