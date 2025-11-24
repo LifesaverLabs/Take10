@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Clock, Heart, Brain, Users, BookOpen, Pause, CheckCircle2, XCircle } from "lucide-react";
 import bookCover from "@/assets/unforgiving-places-cover.jpg";
+import barBystanderGif from "@/assets/Take_10_Bar_Bystander_Intervention.gif";
+import bowingGif from "@/assets/Take_10_Bar_Three_Indian_Men_Bow_Low.gif";
+import elderlyMenGif from "@/assets/Take_10_Bystander_Intervention_Elderly_Men.gif";
+import groceryStoreGif from "@/assets/Take_10_Grocery_Store_Asian_Couple.gif";
 
 const Index = () => {
   const [count, setCount] = useState(10);
@@ -114,6 +118,88 @@ const Index = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Take 10 in Action */}
+      <section className="py-20 md:py-32 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+              <span className="text-gradient">Take 10</span> in Action
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Real scenarios showing how Take 10 interrupts conflict escalation
+            </p>
+            <Card className="bg-primary/5 border-primary/20 mb-8">
+              <CardContent className="pt-6">
+                <p className="text-lg leading-relaxed">
+                  <strong className="text-primary">Try completing or chanting the phrase:</strong>
+                  <br />
+                  <span className="text-xl font-semibold italic">"Whether 10 seconds, 10 minutes, or 10 hours..."</span>
+                  <br />
+                  <span className="text-muted-foreground mt-2 block">
+                    This reminds everyone that the pause is flexible and respects each person's needs.
+                  </span>
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 mx-auto max-w-5xl mb-12">
+            {[
+              {
+                image: barBystanderGif,
+                title: "Bar Bystander Intervention",
+                description: "A bystander steps in to interrupt escalating tensions before they spiral into conflict."
+              },
+              {
+                image: elderlyMenGif,
+                title: "Community De-escalation",
+                description: "Community members recognize the warning signs and speak up to create space for calm."
+              },
+              {
+                image: groceryStoreGif,
+                title: "Everyday Situations",
+                description: "Take 10 works in daily life—wherever tensions rise, anyone can intervene."
+              },
+              {
+                image: bowingGif,
+                title: "Respectful Acknowledgment",
+                description: "After saying Take 10, bowing to each other shows mutual respect—if consistent with your beliefs."
+              }
+            ].map((scenario, i) => (
+              <Card key={i} className="border-border/50 bg-card backdrop-blur-sm overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="aspect-video w-full overflow-hidden bg-muted">
+                    <img 
+                      src={scenario.image} 
+                      alt={scenario.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">{scenario.title}</h3>
+                    <p className="text-muted-foreground">{scenario.description}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <Card className="bg-accent/5 border-accent/20 mx-auto max-w-3xl">
+            <CardContent className="pt-6">
+              <div className="text-center">
+                <Heart className="mx-auto mb-4 h-8 w-8 text-accent" />
+                <h3 className="text-xl font-semibold mb-3">
+                  A Sign of Respect
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  After invoking Take 10, consider bowing to each other as a sign of mutual respect—if that's consistent with your beliefs and cultural practices. This simple gesture acknowledges the humanity in each person and reinforces that we're all working toward understanding, not victory.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
