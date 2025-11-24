@@ -627,7 +627,7 @@ const Index = () => {
                       All code and content on this page is open source and freely available. The code is licensed under the <strong>MIT License</strong> and the content is licensed under <strong>Creative Commons with Attribution</strong>. You're welcome to use, adapt, and build upon this work—just provide attribution to the Take 10 Initiative.
                     </p>
                     <p className="text-muted-foreground text-sm leading-relaxed">
-                      <strong className="text-foreground">We welcome code contributions!</strong> Submit Pull Requests in any calmunity—whether you're fixing bugs, adding features, improving accessibility, or translating content. Every contribution helps Take 10 reach more people.
+                      <strong className="text-foreground">We welcome code and content contributions!</strong> Submit Pull Requests in any calmunity—whether you're fixing bugs, adding features, improving accessibility, or translating content. Every contribution helps Take 10 reach more people.
                     </p>
                   </div>
                 </div>
