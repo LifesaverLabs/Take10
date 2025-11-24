@@ -551,7 +551,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg"
-                className="h-12 px-6 bg-[var(--calm-gradient)] hover:scale-105 transition-transform opacity-100 text-primary-foreground shadow-lg"
+                className="h-12 px-6 bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all opacity-100 shadow-lg font-semibold"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 Learn More
