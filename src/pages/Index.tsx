@@ -453,16 +453,20 @@ const Index = () => {
               <CardContent className="pt-8 pb-8">
                 <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
                   <div className="flex-shrink-0">
-                    <img 
-                      src={bookCover} 
-                      alt="Unforgiving Places: The Unexpected Origins of Gun Violence book cover"
-                      className="w-48 h-auto shadow-xl rounded-lg"
-                    />
+                    <a href="https://search.worldcat.org/title/1452191642" target="_blank" rel="noopener noreferrer">
+                      <img 
+                        src={bookCover} 
+                        alt="Unforgiving Places: The Unexpected Origins of Gun Violence book cover"
+                        className="w-48 h-auto shadow-xl rounded-lg hover:scale-105 transition-transform cursor-pointer"
+                      />
+                    </a>
                   </div>
                   <div className="flex-1 space-y-4">
                     <div>
                       <h3 className="text-2xl font-bold mb-2">
-                        Unforgiving Places: The Unexpected Origins of Gun Violence
+                        <a href="https://search.worldcat.org/title/1452191642" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                          Unforgiving Places: The Unexpected Origins of Gun Violence
+                        </a>
                       </h3>
                       <p className="text-lg text-primary font-semibold">by Jens Ludwig</p>
                     </div>
