@@ -82,26 +82,6 @@ const Index = () => {
               <br />
               When tensions rise, take 10 seconds, minutes, or hours—whatever you need.
             </p>
-
-            <div className="mb-16 flex flex-col items-center gap-6 animate-fade-up [animation-delay:300ms] opacity-100">
-              <Button 
-                onClick={handleTake10}
-                size="lg"
-                className="h-14 px-8 text-lg shadow-[var(--hero-shadow)] hover:shadow-xl transition-all duration-300 bg-[var(--calm-gradient)] hover:scale-105 opacity-100 text-primary-foreground"
-              >
-                <Clock className="mr-2 h-5 w-5" />
-                Try It Now
-              </Button>
-              
-              {isPaused && (
-                <div className="flex flex-col items-center gap-2 animate-breathe">
-                  <div className="flex h-32 w-32 items-center justify-center rounded-full bg-primary/10 text-6xl font-bold text-primary ring-4 ring-primary/20">
-                    {count}
-                  </div>
-                  <p className="text-sm text-muted-foreground">Take a breath...</p>
-                </div>
-              )}
-            </div>
           </div>
         </div>
       </section>
@@ -245,6 +225,26 @@ const Index = () => {
               </div>
             </CardContent>
           </Card>
+
+          <div className="mt-12 flex flex-col items-center gap-6">
+            <Button 
+              onClick={handleTake10}
+              size="lg"
+              className="h-14 px-8 text-lg shadow-[var(--hero-shadow)] hover:shadow-xl transition-all duration-300 bg-[var(--calm-gradient)] hover:scale-105 text-primary-foreground"
+            >
+              <Clock className="mr-2 h-5 w-5" />
+              Try It Now
+            </Button>
+            
+            {isPaused && (
+              <div className="flex flex-col items-center gap-2 animate-breathe">
+                <div className="flex h-32 w-32 items-center justify-center rounded-full bg-primary/10 text-6xl font-bold text-primary ring-4 ring-primary/20">
+                  {count}
+                </div>
+                <p className="text-sm text-muted-foreground">Take a breath...</p>
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
