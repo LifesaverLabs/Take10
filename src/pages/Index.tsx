@@ -116,15 +116,69 @@ const Index = () => {
         </div>
       </section>
 
-      {/* When to Use It */}
+      {/* Civic Duty Section */}
       <section className="bg-secondary/30 py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl">
+            <Card className="border-2 border-primary/20 bg-card backdrop-blur-sm shadow-[var(--hero-shadow)]">
+              <CardContent className="pt-8 pb-8">
+                <div className="text-center mb-8">
+                  <div className="mb-4 inline-flex items-center justify-center h-16 w-16 rounded-full bg-primary/10">
+                    <Users className="h-8 w-8 text-primary" />
+                  </div>
+                  <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+                    It's Your <span className="text-gradient">Civic Duty</span>
+                  </h2>
+                  <p className="text-xl text-muted-foreground">
+                    We all have a responsibility to recognize and interrupt escalation
+                  </p>
+                </div>
+
+                <div className="prose prose-lg max-w-none text-foreground space-y-6">
+                  <p className="text-lg leading-relaxed">
+                    <strong className="text-primary">Bystanders and participants alike:</strong> It's your duty to recognize the symptoms of a superheated argument and <span className="font-semibold">interject immediately with "Take 10"</span>.
+                  </p>
+
+                  <p className="text-lg leading-relaxed">
+                    You've got to <strong>speak up</strong>—or it could emotionally spiral and get harder to solve. When we see the signs of escalation, staying silent isn't neutral. It allows harm to grow.
+                  </p>
+
+                  <div className="bg-primary/5 border-l-4 border-primary p-6 rounded-r-lg my-8">
+                    <p className="text-lg font-medium mb-2 text-primary">Part of Our Civic Obligation</p>
+                    <p className="text-muted-foreground">
+                      It's part of our <em>civigion</em>—our civic duty—that we recognize these moments and help each other step back from and reconsider superheated arguments. We protect each other by creating space for choice.
+                    </p>
+                  </div>
+
+                  <p className="text-lg leading-relaxed">
+                    <strong>You're still free</strong> to return to the conversation in 10 seconds if you want. Take 10 doesn't silence anyone—it gives everyone a chance to consider whether pressing forward angrily and continuing a boiling conflict is the <span className="font-semibold text-primary">right, just move</span>.
+                  </p>
+
+                  <div className="bg-accent/5 border border-accent/20 p-6 rounded-lg mt-8">
+                    <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                      <Heart className="h-5 w-5 text-accent" />
+                      The Power of Bystander Intervention
+                    </h3>
+                    <p className="text-muted-foreground">
+                      Research shows that bystander intervention is one of the most effective ways to prevent harm. When someone interrupts an escalating situation, it gives everyone permission to pause, breathe, and choose a better path forward.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* When to Use It */}
+      <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center mb-16">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              When to Use <span className="text-gradient">Take 10</span>
+              Recognize the <span className="text-gradient">Warning Signs</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Recognize the signs of escalation and interrupt the spiral
+              Learn to spot escalation symptoms and speak up immediately
             </p>
           </div>
 
@@ -132,23 +186,23 @@ const Index = () => {
             {[
               {
                 icon: Users,
-                title: "Heated Arguments",
-                description: "When voices are raised and emotions are running high, Take 10 creates breathing room."
+                title: "Raised Voices & Aggressive Tone",
+                description: "Volume increases, tone becomes harsh. Don't wait—interject with Take 10 before it spirals further."
               },
               {
                 icon: Brain,
                 title: "Negative Affect Spirals",
-                description: "Break the cycle when anger feeds more anger and the situation escalates rapidly."
+                description: "Anger feeding anger, each response escalating. Speak up immediately to break the cycle."
               },
               {
                 icon: Heart,
-                title: "Bullying or Harassment",
-                description: "Anyone can invoke Take 10 as a circuit breaker to prevent harmful behavior."
+                title: "Personal Attacks Begin",
+                description: "Shifting from issues to insults. This is your moment to step in: 'Take 10, everyone.'"
               },
               {
                 icon: Pause,
-                title: "Impulsive Reactions",
-                description: "Catch yourself before saying or doing something you'll regret. Create space for choice."
+                title: "Physical Tension Rising",
+                description: "Body language changes—clenched fists, invading space. Your civic duty is to interrupt now."
               }
             ].map((item, i) => (
               <Card key={i} className="border-border/50 bg-card backdrop-blur-sm">
