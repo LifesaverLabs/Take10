@@ -633,7 +633,7 @@ const Index = () => {
                 </div>
                 <div className="mt-4 pt-4 border-t border-border/30">
                   <a 
-                    href="https://github.com/yourusername/take10" 
+                    href="https://github.com/LifesaverLabs/take10" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
