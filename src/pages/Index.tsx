@@ -611,11 +611,38 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-              Share <span className="text-gradient">Take 10</span>
+              Share or Contribute to <span className="text-gradient">Take 10</span>
             </h2>
             <p className="mb-8 text-lg text-muted-foreground">
               Help spread this simple but powerful practice. When someone says "Take 10," everyone benefits from the pause. We need your help to popularize this in the calmunity.
             </p>
+            
+            <Card className="border-border/50 bg-card/50 backdrop-blur-sm mb-8 text-left">
+              <CardContent className="pt-6">
+                <div className="flex items-start gap-3 mb-3">
+                  <BookOpen className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">Open Source & Free to Use</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      All code and content on this page is open source and freely available. The code is licensed under the <strong>MIT License</strong> and the content is licensed under <strong>Creative Commons with Attribution</strong>. You're welcome to use, adapt, and build upon this work—just provide attribution to the Take 10 Initiative.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-border/30">
+                  <a 
+                    href="https://github.com/yourusername/take10" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                    </svg>
+                    View on GitHub
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg"
