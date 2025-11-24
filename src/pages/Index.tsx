@@ -47,11 +47,11 @@ const Index = () => {
               When tensions rise, take 10 seconds, minutes, or hours—whatever you need.
             </p>
 
-            <div className="mb-16 flex flex-col items-center gap-6 animate-fade-up [animation-delay:300ms]">
+            <div className="mb-16 flex flex-col items-center gap-6 animate-fade-up [animation-delay:300ms] opacity-100">
               <Button 
                 onClick={handleTake10}
                 size="lg"
-                className="h-14 px-8 text-lg shadow-[var(--hero-shadow)] hover:shadow-xl transition-all duration-300 bg-[var(--calm-gradient)] hover:scale-105"
+                className="h-14 px-8 text-lg shadow-[var(--hero-shadow)] hover:shadow-xl transition-all duration-300 bg-[var(--calm-gradient)] hover:scale-105 opacity-100 text-primary-foreground"
               >
                 <Clock className="mr-2 h-5 w-5" />
                 Try It Now
@@ -344,7 +344,7 @@ const Index = () => {
                     <div className="pt-4">
                       <Button 
                         size="lg"
-                        className="bg-[var(--calm-gradient)] hover:scale-105 transition-transform"
+                        className="bg-[var(--calm-gradient)] hover:scale-105 transition-transform opacity-100 text-primary-foreground"
                         asChild
                       >
                         <a href="https://press.uchicago.edu/ucp/books/book/chicago/U/bo244203115.html" target="_blank" rel="noopener noreferrer">
@@ -421,14 +421,14 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg"
-                className="h-12 px-6 bg-[var(--calm-gradient)] hover:scale-105 transition-transform"
+                className="h-12 px-6 bg-[var(--calm-gradient)] hover:scale-105 transition-transform opacity-100 text-primary-foreground"
               >
                 Learn More
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="h-12 px-6 hover:bg-primary/10 transition-colors"
+                className="h-12 px-6 hover:bg-primary/10 transition-colors opacity-100 border-primary text-primary"
               >
                 Share This Resource
               </Button>
