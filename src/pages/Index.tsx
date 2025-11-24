@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, Heart, Brain, Users, BookOpen, Pause, CheckCircle2, XCircle } from "lucide-react";
+import { Clock, Heart, Brain, Users, BookOpen, Pause, CheckCircle2, XCircle, Play } from "lucide-react";
 import bookCover from "@/assets/unforgiving-places-cover.jpg";
-import barBystanderGif from "@/assets/Take_10_Bar_Bystander_Intervention.gif";
-import bowingGif from "@/assets/Take_10_Bar_Three_Indian_Men_Bow_Low.gif";
-import elderlyMenGif from "@/assets/Take_10_Bystander_Intervention_Elderly_Men.gif";
-import groceryStoreGif from "@/assets/Take_10_Grocery_Store_Asian_Couple.gif";
+import barBystanderVideo from "@/assets/Take_10_Bar_Bystander_Intervention.mp4";
+import bowingVideo from "@/assets/Take_10_Bar_Three_Indian_Men_Bow_Low.mp4";
+import elderlyMenVideo from "@/assets/Take_10_Bystander_Intervention_Elderly_Men.mp4";
+import groceryStoreVideo from "@/assets/Take_10_Grocery_Store_Asian_Couple.mp4";
 
 const Index = () => {
   const [count, setCount] = useState(10);
@@ -149,34 +149,46 @@ const Index = () => {
           <div className="grid gap-8 md:grid-cols-2 mx-auto max-w-5xl mb-12">
             {[
               {
-                image: barBystanderGif,
+                video: barBystanderVideo,
                 title: "Bar Bystander Intervention",
                 description: "A bystander steps in to interrupt escalating tensions before they spiral into conflict."
               },
               {
-                image: elderlyMenGif,
+                video: elderlyMenVideo,
                 title: "Community De-escalation",
                 description: "Community members recognize the warning signs and speak up to create space for calm."
               },
               {
-                image: groceryStoreGif,
+                video: groceryStoreVideo,
                 title: "Everyday Situations",
                 description: "Take 10 works in daily life—wherever tensions rise, anyone can intervene."
               },
               {
-                image: bowingGif,
+                video: bowingVideo,
                 title: "Respectful Acknowledgment",
                 description: "After saying Take 10, bowing to each other shows mutual respect—if consistent with your beliefs."
               }
             ].map((scenario, i) => (
               <Card key={i} className="border-border/50 bg-card backdrop-blur-sm overflow-hidden">
                 <CardContent className="p-0">
-                  <div className="aspect-video w-full overflow-hidden bg-muted">
-                    <img 
-                      src={scenario.image} 
-                      alt={scenario.title}
+                  <div className="aspect-video w-full overflow-hidden bg-muted relative group cursor-pointer">
+                    <video 
+                      src={scenario.video}
                       className="w-full h-full object-cover"
+                      controls
+                      preload="metadata"
+                      onClick={(e) => {
+                        const video = e.currentTarget;
+                        if (video.paused) {
+                          video.play();
+                        } else {
+                          video.pause();
+                        }
+                      }}
                     />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                      <Play className="h-16 w-16 text-white drop-shadow-lg" />
+                    </div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-2">{scenario.title}</h3>
