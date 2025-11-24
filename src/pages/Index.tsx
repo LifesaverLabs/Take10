@@ -539,6 +539,53 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Community Evolution Section */}
+      <section className="py-20 md:py-32 bg-accent/5">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-primary/10 px-6 py-2 text-sm font-medium text-primary">
+              <Users className="h-4 w-4" />
+              Join the Movement
+            </div>
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+              Teach, Redevelop, and Evolve <span className="text-gradient">Take 10</span>
+            </h2>
+            <p className="mb-8 text-lg text-muted-foreground leading-relaxed">
+              We'd love for Take 10 to be taught, redeveloped, and evolved in calmunities, schools, institutions, and popular media. This concept belongs to everyone—adapt it, improve it, and make it work for your context. Whether you're an educator, community leader, content creator, or simply someone who believes in de-escalation, you have the power to shape how Take 10 spreads and grows.
+            </p>
+            <div className="grid gap-6 md:grid-cols-3 text-left mt-12">
+              <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+                <CardContent className="pt-6">
+                  <BookOpen className="h-8 w-8 text-primary mb-4" />
+                  <h3 className="font-semibold text-lg mb-2">In Education</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Integrate Take 10 into curricula, conflict resolution programs, and student life initiatives.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+                <CardContent className="pt-6">
+                  <Users className="h-8 w-8 text-primary mb-4" />
+                  <h3 className="font-semibold text-lg mb-2">In Communities</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Adapt Take 10 for local contexts, neighborhood programs, and community safety efforts.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+                <CardContent className="pt-6">
+                  <Brain className="h-8 w-8 text-primary mb-4" />
+                  <h3 className="font-semibold text-lg mb-2">In Media & Culture</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Feature Take 10 in storytelling, social media campaigns, and cultural conversations.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 md:py-32 bg-gradient-to-b from-secondary/20 to-background">
         <div className="container mx-auto px-4">
