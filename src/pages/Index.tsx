@@ -278,7 +278,7 @@ const Index = () => {
                   <div className="bg-primary/5 border-l-4 border-primary p-6 rounded-r-lg my-8">
                     <p className="text-lg font-medium mb-2 text-primary">Part of Our Civic Obligation</p>
                     <p className="text-muted-foreground">
-                      It's part of our <em>civigion</em>—our civic duty—that we recognize these moments and help each other step back from and reconsider superheated arguments. We protect each other by creating space for choice.
+                      It's part of our <em><a href="https://www.civigion.us" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">civigion</a></em>—our civic religious duty—that we recognize these moments and help each other step back from and reconsider superheated arguments. We protect each other by creating space for choice.
                     </p>
                   </div>
 
