@@ -553,6 +553,26 @@ const Index = () => {
             <p className="mb-8 text-lg text-muted-foreground leading-relaxed">
               We'd love for Take 10 to be taught, redeveloped, and evolved in calmunities, schools, institutions, and popular media. This concept belongs to everyone—adapt it, improve it, and make it work for your context. Whether you're an educator, community leader, content creator, or simply someone who believes in de-escalation, you have the power to shape how Take 10 spreads and grows.
             </p>
+
+            <Card className="border-2 border-primary/20 bg-primary/5 backdrop-blur-sm mb-12">
+              <CardContent className="pt-8 pb-8">
+                <div className="text-center">
+                  <div className="mb-4 inline-flex items-center justify-center h-16 w-16 rounded-full bg-primary/10">
+                    <Share2 className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">
+                    Calling All <span className="text-gradient">Content Creators</span>
+                  </h3>
+                  <p className="text-lg leading-relaxed mb-6 max-w-2xl mx-auto">
+                    We encourage content creators <strong>anywhere and everywhere</strong> to create diverse content around Take 10. Localize it to your language and culture—this kind of idea for conflict interruption is <span className="font-semibold text-primary">universal</span>.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                    Make videos, write songs, create art, develop educational materials, share stories—in any language, any format, any cultural context. Take 10 transcends borders and belongs to every community. Your interpretation matters. Your voice matters. Your culture matters.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
             <div className="grid gap-6 md:grid-cols-3 text-left mt-12">
               <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
                 <CardContent className="pt-6">
