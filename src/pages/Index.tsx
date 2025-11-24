@@ -547,7 +547,7 @@ const Index = () => {
               Share <span className="text-gradient">Take 10</span>
             </h2>
             <p className="mb-8 text-lg text-muted-foreground">
-              Help spread this simple but powerful practice. When someone says "Take 10," everyone benefits from the pause.
+              Help spread this simple but powerful practice. When someone says "Take 10," everyone benefits from the pause. We need your help to popularize this in the calmunity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -656,12 +656,32 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-8">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>Take 10 • A de-escalation practice for everyone</p>
-          <p className="mt-2">
-            <a href="https://take10.us" className="hover:text-primary transition-colors">take10.us</a>
-          </p>
+      <footer className="border-t border-border/50 py-12">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <p className="text-sm text-muted-foreground mb-4">Take 10 • A de-escalation practice for everyone</p>
+            <p className="text-sm text-muted-foreground mb-6">
+              <a href="https://take10.us" className="hover:text-primary transition-colors">take10.us</a>
+            </p>
+            <div className="pt-6 border-t border-border/30 max-w-3xl mx-auto">
+              <p className="text-sm text-muted-foreground mb-3 font-medium">An Initiative of:</p>
+              <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+                <span>Lifesaver Labs™</span>
+                <span className="hidden sm:inline">•</span>
+                <a href="https://www.enoughisenuf.org" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  Enough is Enuf
+                </a>
+                <span className="hidden sm:inline">•</span>
+                <a href="https://www.blesseddialect.org" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  Blessed Dialect
+                </a>
+                <span className="hidden sm:inline">•</span>
+                <a href="https://www.neighbor911.us" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  Naybor SOS™
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
