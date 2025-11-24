@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, Heart, Brain, Users, BookOpen, Pause, CheckCircle2, XCircle, Play } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Clock, Heart, Brain, Users, BookOpen, Pause, CheckCircle2, XCircle, Play, Share2, Twitter, Facebook, Linkedin, Mail, Link2, Smartphone } from "lucide-react";
 import bookCover from "@/assets/unforgiving-places-cover.jpg";
 import barBystanderVideo from "@/assets/Take_10_Bar_Bystander_Intervention.mp4";
 import bowingVideo from "@/assets/Take_10_Bar_Three_Indian_Men_Bow_Low.mp4";
@@ -11,6 +12,7 @@ import groceryStoreVideo from "@/assets/Take_10_Grocery_Store_Asian_Couple.mp4";
 const Index = () => {
   const [count, setCount] = useState(10);
   const [isPaused, setIsPaused] = useState(false);
+  const [shareDialogOpen, setShareDialogOpen] = useState(false);
 
   useEffect(() => {
     if (isPaused && count > 0) {
@@ -25,6 +27,36 @@ const Index = () => {
   const handleTake10 = () => {
     setIsPaused(true);
     setCount(10);
+  };
+
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://take10.us';
+  const shareTitle = 'Take 10 - A De-escalation Practice';
+  const shareText = 'Take 10: A simple phrase that creates space for calm. Whether 10 seconds, 10 minutes, or 10 hours—choose your pause. Learn more about this powerful de-escalation tool.';
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(shareUrl);
+    alert('Link copied to clipboard!');
+  };
+
+  const handleNativeShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: shareTitle,
+          text: shareText,
+          url: shareUrl
+        });
+      } catch (error) {
+        console.log('Share cancelled');
+      }
+    }
+  };
+
+  const socialShareLinks = {
+    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
+    email: `mailto:?subject=${encodeURIComponent(shareTitle)}&body=${encodeURIComponent(shareText + '\n\n' + shareUrl)}`
   };
 
   return (
@@ -524,25 +556,99 @@ const Index = () => {
               >
                 Learn More
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="h-12 px-6 hover:bg-primary/10 transition-colors opacity-100 border-primary text-primary shadow-md"
-                onClick={() => {
-                  if (navigator.share) {
-                    navigator.share({
-                      title: 'Take 10',
-                      text: 'Take 10 - A de-escalation phrase that creates space for calm. Whether 10 seconds, 10 minutes, or 10 hours.',
-                      url: window.location.href
-                    });
-                  } else {
-                    navigator.clipboard.writeText(window.location.href);
-                    alert('Link copied to clipboard!');
-                  }
-                }}
-              >
-                Share This Resource
-              </Button>
+              
+              <Dialog open={shareDialogOpen} onOpenChange={setShareDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="h-12 px-6 hover:bg-primary/10 transition-colors opacity-100 border-primary text-primary shadow-md"
+                  >
+                    <Share2 className="mr-2 h-5 w-5" />
+                    Share This Resource
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>Share Take 10</DialogTitle>
+                    <DialogDescription>
+                      Help spread this de-escalation practice. Choose how you'd like to share.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="grid gap-3 py-4">
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start gap-3 h-12"
+                      onClick={() => {
+                        window.open(socialShareLinks.twitter, '_blank', 'width=550,height=420');
+                        setShareDialogOpen(false);
+                      }}
+                    >
+                      <Twitter className="h-5 w-5 text-[#1DA1F2]" />
+                      <span>Share on Twitter</span>
+                    </Button>
+                    
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start gap-3 h-12"
+                      onClick={() => {
+                        window.open(socialShareLinks.facebook, '_blank', 'width=550,height=420');
+                        setShareDialogOpen(false);
+                      }}
+                    >
+                      <Facebook className="h-5 w-5 text-[#1877F2]" />
+                      <span>Share on Facebook</span>
+                    </Button>
+                    
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start gap-3 h-12"
+                      onClick={() => {
+                        window.open(socialShareLinks.linkedin, '_blank', 'width=550,height=420');
+                        setShareDialogOpen(false);
+                      }}
+                    >
+                      <Linkedin className="h-5 w-5 text-[#0A66C2]" />
+                      <span>Share on LinkedIn</span>
+                    </Button>
+                    
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start gap-3 h-12"
+                      onClick={() => {
+                        window.location.href = socialShareLinks.email;
+                        setShareDialogOpen(false);
+                      }}
+                    >
+                      <Mail className="h-5 w-5 text-muted-foreground" />
+                      <span>Share via Email</span>
+                    </Button>
+                    
+                    {navigator.share && (
+                      <Button
+                        variant="outline"
+                        className="w-full justify-start gap-3 h-12"
+                        onClick={() => {
+                          handleNativeShare();
+                          setShareDialogOpen(false);
+                        }}
+                      >
+                        <Smartphone className="h-5 w-5 text-muted-foreground" />
+                        <span>More Options</span>
+                      </Button>
+                    )}
+                    
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start gap-3 h-12"
+                      onClick={handleCopyLink}
+                    >
+                      <Link2 className="h-5 w-5 text-muted-foreground" />
+                      <span>Copy Link</span>
+                    </Button>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         </div>
