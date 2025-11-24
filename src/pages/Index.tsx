@@ -203,7 +203,7 @@ const Index = () => {
             ].map((scenario, i) => (
               <Card key={i} className="border-border/50 bg-card backdrop-blur-sm overflow-hidden">
                 <CardContent className="p-0">
-                  <div className="aspect-video w-full overflow-hidden bg-muted relative group cursor-pointer">
+                  <div className="aspect-video w-full overflow-hidden bg-muted relative cursor-pointer">
                     <video 
                       src={scenario.video}
                       className="w-full h-full object-cover"
@@ -218,9 +218,6 @@ const Index = () => {
                         }
                       }}
                     />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                      <Play className="h-16 w-16 text-white drop-shadow-lg" />
-                    </div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-2">{scenario.title}</h3>
